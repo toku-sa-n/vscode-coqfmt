@@ -32,3 +32,12 @@ jobs:
 
       - name: Run prettier
         run: npx --yes prettier --check .
+
+  eslint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run eslint
+        run: npm run lint
