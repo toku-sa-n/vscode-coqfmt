@@ -9,6 +9,11 @@
   "categories": [
     "Formatters"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toku-sa-n/vscode-coqfmt.git"
+  },
+  "license": "AGPL-3.0-or-later",
   "activationEvents": [
     "onLanguage:coq"
   ],
