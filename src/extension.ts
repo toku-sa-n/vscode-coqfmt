@@ -5,7 +5,7 @@ export function activate(_: vscode.ExtensionContext) {
     vscode.languages.registerDocumentRangeFormattingEditProvider("coq", {
         provideDocumentRangeFormattingEdits(
             document: vscode.TextDocument,
-            range: vscode.Range
+            range: vscode.Range,
         ): vscode.ProviderResult<vscode.TextEdit[]> {
             try {
                 const formatted = child_process
@@ -15,7 +15,7 @@ export function activate(_: vscode.ExtensionContext) {
                 return [vscode.TextEdit.replace(range, formatted)];
             } catch (e: any) {
                 vscode.window.showErrorMessage(
-                    `Failed to format the code: ${e.message}`
+                    `Failed to format the code: ${e.message}`,
                 );
 
                 return [];
