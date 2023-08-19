@@ -2,6 +2,10 @@
 
 A VSCode extension for `coqfmt`
 
+## Properties
+
+- `coqfmt.args`: Arguments for `coqfmt`.
+
 ## License
 
 This extension is bootstrapped from [vscode-generator-code](https://github.com/microsoft/vscode-generator-code), and its license file is [LICENSE-vscode-generator-code](vscode-generator-code).

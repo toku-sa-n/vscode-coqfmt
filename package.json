@@ -26,6 +26,19 @@
           "Coq"
         ]
       }
+    ],
+    "configuration": [
+      {
+        "title": "Coqfmt configuration",
+        "type": "object",
+        "properties": {
+          "coqfmt.args": {
+            "type": "string",
+            "default": "",
+            "description": "Coqfmt arguments"
+          }
+        }
+      }
     ]
   },
   "scripts": {

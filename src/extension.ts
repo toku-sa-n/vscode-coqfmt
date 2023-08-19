@@ -7,9 +7,20 @@ export function activate(_: vscode.ExtensionContext) {
             document: vscode.TextDocument,
             range: vscode.Range,
         ): vscode.ProviderResult<vscode.TextEdit[]> {
+            const config = vscode.workspace.getConfiguration("coqfmt");
+
+            const workspaceFullPath = vscode.workspace.getWorkspaceFolder(
+                document.uri,
+            )?.uri.fsPath;
+
             try {
+                const cmd = "coqfmt ".concat(config.get("args", ""));
+
                 const formatted = child_process
-                    .execSync("coqfmt", { input: document.getText(range) })
+                    .execSync(cmd, {
+                        input: document.getText(range),
+                        cwd: workspaceFullPath,
+                    })
                     .toString();
 
                 return [vscode.TextEdit.replace(range, formatted)];
